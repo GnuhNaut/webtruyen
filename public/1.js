@@ -125,39 +125,39 @@ __webpack_require__.r(__webpack_exports__);
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
         chuong: "chương 1",
-        image: "/img/logo.png"
+        image: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
         chuong: "chương 1",
-        image: "/img/logo.png"
+        image: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
         chuong: "chương 1",
-        image: "/img/logo.png"
+        image: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
         chuong: "chương 1",
-        image: "/img/logo.png"
+        image: "/images/logo.png"
       }],
       truyenTienHiep: [{
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
         chuong: "chương 1",
-        image: "/img/logo.png"
+        image: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
         chuong: "chương 1",
-        image: "/img/logo.png"
+        image: "/images/logo.png"
       }],
       truyenTeen: [{
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
         chuong: "chương 1",
-        image: "/img/logo.png"
+        image: "/images/logo.png"
       }]
     };
   }

@@ -2775,7 +2775,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -2816,36 +2815,36 @@ __webpack_require__.r(__webpack_exports__);
       truyenDeCu: [{
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }],
       truyenVip: [{
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }],
       ngontinh: true,
       tienhiep: false,
@@ -2891,19 +2890,19 @@ __webpack_require__.r(__webpack_exports__);
       truyenFull: [{
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }, {
         link: "/truyen",
         text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "../assets/img/logo.png"
+        src: "/images/logo.png"
       }]
     };
   }
@@ -40831,9 +40830,9 @@ var render = function() {
     "div",
     { staticClass: "home" },
     [
-      _c("NavigationComponent"),
-      _vm._v(" "),
       _c("ContactComponent"),
+      _vm._v(" "),
+      _c("NavigationComponent"),
       _vm._v(" "),
       _c("div", { staticClass: "main-body height-100vh pt-4" }, [
         _c("div", { staticClass: "container" }, [
@@ -74695,8 +74694,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.productionTip = false;
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-// Vue.component('example', require('./components/views/Home.vue').default);
 
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example', __webpack_require__(/*! ./components/views/Home.vue */ "./resources/js/components/views/Home.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -74712,7 +74711,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.config.productionTip = false;
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  // el: '#app',
+  el: '#app',
   router: _router__WEBPACK_IMPORTED_MODULE_2__["default"],
   store: _store__WEBPACK_IMPORTED_MODULE_3__["default"],
   render: function render(h) {
@@ -75472,7 +75471,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: 'home',
     component: _components_views_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/about',
+    path: './about',
     name: 'about',
     component: function component() {
       return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./components/views/About.vue */ "./resources/js/components/views/About.vue"));
@@ -75490,7 +75489,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/category/KiemHiep.vue */ "./resources/js/components/category/KiemHiep.vue"));
     }
   }, {
-    path: '/lichsu',
+    path: './lichsu',
     name: 'lichsu',
     component: function component() {
       return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./components/category/LichSu.vue */ "./resources/js/components/category/LichSu.vue"));

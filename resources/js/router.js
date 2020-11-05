@@ -12,7 +12,7 @@ export default new Router({
             component: Home
         },
         {
-            path: '/about',
+            path: './about',
             name: 'about',
             component: () =>
                 import ('./components/views/About.vue')
@@ -30,7 +30,7 @@ export default new Router({
                 import ('./components/category/KiemHiep.vue')
         },
         {
-            path: '/lichsu',
+            path: './lichsu',
             name: 'lichsu',
             component: () =>
                 import ('./components/category/LichSu.vue')

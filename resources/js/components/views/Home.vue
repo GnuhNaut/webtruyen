@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <NavigationComponent></NavigationComponent>
     <ContactComponent></ContactComponent>
+    <NavigationComponent></NavigationComponent>
     <div class="main-body height-100vh pt-4">
       <div class="container">
         <div class="row m-0 p-0">
@@ -48,7 +48,6 @@
                 </div>
               </div>
             </div>
-
             <div class="card mb-3 border-0">
               <div class="row no-gutters">
                 <div class="col-12">
@@ -227,44 +226,44 @@ export default {
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         }
       ],
       truyenVip: [
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         }
       ],
       ngontinh: true,
@@ -322,22 +321,22 @@ export default {
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "../assets/img/logo.png"
+          src: "/images/logo.png"
         }
       ]
   };

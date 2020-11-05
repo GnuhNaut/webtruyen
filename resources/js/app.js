@@ -32,7 +32,7 @@ Vue.config.productionTip = false
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Vue.component('example', require('./components/views/Home.vue').default);
+Vue.component('example', require('./components/views/Home.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -49,7 +49,7 @@ Vue.config.productionTip = false
 // }).$mount('#app')
 require('./bootstrap');
 const app = new Vue({
-    // el: '#app',
+    el: '#app',
     router,
     store,
     render: h => h(App)
