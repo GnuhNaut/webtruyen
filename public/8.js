@@ -409,7 +409,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.wiki-content {\n    background: #faf5eb url(/img/background/church.png) 0 0 repeat;\n    background-size: 100px;\n    color: #262626;\n    border: 6px solid #b0aca7;\n    padding: 60px 64px;\n    margin-left: auto;\n    margin-right: auto;\n}\n.iconfont {\n    font-family: iconfont!important;\n    font-size: 16px;\n    font-style: normal;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n}\n.box-title{\n  border-top: 2px solid #cfcfcf;\n}\n", ""]);
+exports.push([module.i, "\n.wiki-content {\r\n    background: #faf5eb url(/img/background/church.png) 0 0 repeat;\r\n    background-size: 100px;\r\n    color: #262626;\r\n    border: 6px solid #b0aca7;\r\n    padding: 60px 64px;\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.iconfont {\r\n    font-family: iconfont!important;\r\n    font-size: 16px;\r\n    font-style: normal;\r\n    -webkit-font-smoothing: antialiased;\r\n    -moz-osx-font-smoothing: grayscale;\n}\n.box-title{\r\n  border-top: 2px solid #cfcfcf;\n}\r\n", ""]);
 
 // exports
 

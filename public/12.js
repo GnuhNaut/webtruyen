@@ -186,7 +186,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nul > li[data-v-66463baa] {\n  list-style: none;\n}\n.border-item[data-v-66463baa] {\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-66463baa] {\n  color: #2c3e50;\n  text-decoration: none;\n}\n.image-item[data-v-66463baa] {\n  display: block;\n  width: 35px;\n  flex-shrink: 0;\n}\n.image-item img[data-v-66463baa] {\n  max-width: 100%;\n  vertical-align: middle;\n}\n", ""]);
+exports.push([module.i, "\nul > li[data-v-66463baa] {\r\n  list-style: none;\n}\n.border-item[data-v-66463baa] {\r\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-66463baa] {\r\n  color: #2c3e50;\r\n  text-decoration: none;\n}\n.image-item[data-v-66463baa] {\r\n  display: block;\r\n  width: 35px;\r\n  flex-shrink: 0;\n}\n.image-item img[data-v-66463baa] {\r\n  max-width: 100%;\r\n  vertical-align: middle;\n}\r\n", ""]);
 
 // exports
 
