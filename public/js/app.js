@@ -7438,7 +7438,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#app {\n  font-family: 'Roboto', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n  background-color: #e3e3e3;\n  font-size: 14px;\n}\n", ""]);
+exports.push([module.i, "\n#app {\r\n  font-family: 'Roboto', sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  text-align: center;\r\n  color: #2c3e50;\r\n  background-color: #e3e3e3;\r\n  font-size: 14px;\n}\r\n", ""]);
 
 // exports
 
@@ -7457,7 +7457,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background-header[data-v-7b95ae3e]{\n  height: 350px;\n  overflow: hidden;\n}\n.background-header img[data-v-7b95ae3e]{\n  height: 100%;\n  width: 100%;\n}\n.huan[data-v-7b95ae3e] {\n  width: 350px;\n  height: 350px;\n}\n", ""]);
+exports.push([module.i, "\n.background-header[data-v-7b95ae3e]{\r\n  height: 350px;\r\n  overflow: hidden;\n}\n.background-header img[data-v-7b95ae3e]{\r\n  height: 100%;\r\n  width: 100%;\n}\n.huan[data-v-7b95ae3e] {\r\n  width: 350px;\r\n  height: 350px;\n}\r\n", ""]);
 
 // exports
 
@@ -7476,7 +7476,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.logo-img[data-v-74518cbb] {\n  width: 120px;\n}\n", ""]);
+exports.push([module.i, "\n.logo-img[data-v-74518cbb] {\r\n  width: 120px;\n}\r\n", ""]);
 
 // exports
 
@@ -7495,7 +7495,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.vs-navbar-before[data-v-129e42d8]{\n  position: relative;\n  padding: 5px 10px;\n}\n.border-top[data-v-129e42d8]{\n  border-top: 1px solid #989898 !important;\n}\n.vs-navbar-after[data-v-129e42d8]{\n  width: 0;\n  height: 2px;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%);\n  background: 31,116,255;\n  position: absolute;\n  transition: all .25s ease;\n  z-index: 10;\n}\n.list-nostyle a[data-v-129e42d8]{\n  color: inherit;\n  text-decoration: none;\n}\n.list-nostyle a:hover~.vs-navbar-after[data-v-129e42d8] {\n    width: 70%;\n}\n.partner-card[data-v-129e42d8]{\n    width: 50px;\n    height: 50px;\n    overflow: hidden;\n    margin:5px;\n}\n.partner-card img[data-v-129e42d8]{\n    height: 100%;\n}\n.footer-logo-img[data-v-129e42d8] {\n  height: 30px !important;\n}\n.border-0[data-v-129e42d8] {\n  border: none !important;\n  outline: none !important;\n  color: #fff !important;\n}\n.vs-navbar[data-v-129e42d8] {\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-129e42d8] {\n  background-color: #fff !important;\n  color: #fff !important;\n  background: none;\n}\n.social-icon img[data-v-129e42d8]{\n    width: 30px;\n    height: 30px;\n}\n", ""]);
+exports.push([module.i, "\n.vs-navbar-before[data-v-129e42d8]{\r\n  position: relative;\r\n  padding: 5px 10px;\n}\n.border-top[data-v-129e42d8]{\r\n  border-top: 1px solid #989898 !important;\n}\n.vs-navbar-after[data-v-129e42d8]{\r\n  width: 0;\r\n  height: 2px;\r\n  left: 50%;\r\n  bottom: 0;\r\n  transform: translate(-50%);\r\n  background: 31,116,255;\r\n  position: absolute;\r\n  transition: all .25s ease;\r\n  z-index: 10;\n}\n.list-nostyle a[data-v-129e42d8]{\r\n  color: inherit;\r\n  text-decoration: none;\n}\n.list-nostyle a:hover~.vs-navbar-after[data-v-129e42d8] {\r\n    width: 70%;\n}\n.partner-card[data-v-129e42d8]{\r\n    width: 50px;\r\n    height: 50px;\r\n    overflow: hidden;\r\n    margin:5px;\n}\n.partner-card img[data-v-129e42d8]{\r\n    height: 100%;\n}\n.footer-logo-img[data-v-129e42d8] {\r\n  height: 30px !important;\n}\n.border-0[data-v-129e42d8] {\r\n  border: none !important;\r\n  outline: none !important;\r\n  color: #fff !important;\n}\n.vs-navbar[data-v-129e42d8] {\r\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-129e42d8] {\r\n  background-color: #fff !important;\r\n  color: #fff !important;\r\n  background: none;\n}\n.social-icon img[data-v-129e42d8]{\r\n    width: 30px;\r\n    height: 30px;\n}\r\n", ""]);
 
 // exports
 
@@ -7514,7 +7514,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background-color[data-v-7bef19bb]{\n  background-color: #2C7ABE;\n}\n.logo-img[data-v-7bef19bb]{\n  height: 50px !important;\n}\n.border-0[data-v-7bef19bb]{\n  border: none !important;\n  outline: none !important;\n  color: #FFF !important;\n}\n.vs-navbar[data-v-7bef19bb]{\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-7bef19bb]{\n  background-color:#FFF !important;\n  color:#FFF !important;\n  background:none;\n}\na[data-v-7bef19bb] {\n  outline: none;\n  text-decoration: none !important;\n  color: #2c3e50;\n  font-size: 14px;\n}\n.form-input[data-v-7bef19bb]{\n  width: auto !important;\n}\n.left-content[data-v-7bef19bb]{\n  justify-content: left;\n}\n.left-content input[data-v-7bef19bb] {\n  padding: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.background-color[data-v-7bef19bb]{\r\n  background-color: #2C7ABE;\n}\n.logo-img[data-v-7bef19bb]{\r\n  height: 50px !important;\n}\n.border-0[data-v-7bef19bb]{\r\n  border: none !important;\r\n  outline: none !important;\r\n  color: #FFF !important;\n}\n.vs-navbar[data-v-7bef19bb]{\r\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-7bef19bb]{\r\n  background-color:#FFF !important;\r\n  color:#FFF !important;\r\n  background:none;\n}\na[data-v-7bef19bb] {\r\n  outline: none;\r\n  text-decoration: none !important;\r\n  color: #2c3e50;\r\n  font-size: 14px;\n}\n.form-input[data-v-7bef19bb]{\r\n  width: auto !important;\n}\n.left-content[data-v-7bef19bb]{\r\n  justify-content: left;\n}\n.left-content input[data-v-7bef19bb] {\r\n  padding: 10px;\n}\r\n", ""]);
 
 // exports
 
@@ -7533,7 +7533,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.news-item[data-v-6826b820] {\n  height: 60px;\n}\n.review-item[data-v-6826b820]{\n  height: 60px;\n}\nh6[data-v-6826b820]{\n  font-size: 14px;\n}\nul > li[data-v-6826b820] {\n  list-style: none;\n}\n.border-item[data-v-6826b820] {\n  height: 40px;\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-6826b820] {\n  color: #2c3e50;\n  text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "\n.news-item[data-v-6826b820] {\r\n  height: 60px;\n}\n.review-item[data-v-6826b820]{\r\n  height: 60px;\n}\nh6[data-v-6826b820]{\r\n  font-size: 14px;\n}\nul > li[data-v-6826b820] {\r\n  list-style: none;\n}\n.border-item[data-v-6826b820] {\r\n  height: 40px;\r\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-6826b820] {\r\n  color: #2c3e50;\r\n  text-decoration: none;\n}\r\n", ""]);
 
 // exports
 
@@ -7552,7 +7552,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nul > li[data-v-59b256ea] {\n  list-style: none;\n}\n.border-item[data-v-59b256ea] {\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-59b256ea] {\n  color: #2c3e50;\n  text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "\nul > li[data-v-59b256ea] {\r\n  list-style: none;\n}\n.border-item[data-v-59b256ea] {\r\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-59b256ea] {\r\n  color: #2c3e50;\r\n  text-decoration: none;\n}\r\n", ""]);
 
 // exports
 
@@ -75624,8 +75624,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /opt/lampp/htdocs/webtruyen/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /opt/lampp/htdocs/webtruyen/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\5.Huan\Nam3\HQTCSDL\btl\webtruyen\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\5.Huan\Nam3\HQTCSDL\btl\webtruyen\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
