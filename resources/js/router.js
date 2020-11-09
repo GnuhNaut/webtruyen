@@ -108,13 +108,13 @@ export default new Router({
                 import ('./components/news/AboutNews.vue')
         },
         {
-            path: '/truyen',
+            path: '/truyen/:name',
             name: 'truyen',
             component: () =>
                 import ('./components/story/truyen.vue')
         },
         {
-            path: '/doctruyen',
+            path: '/doctruyen/:name/:id',
             name: 'doctruyen',
             component: () =>
                 import ('./components/readthestory/DocTruyen.vue')

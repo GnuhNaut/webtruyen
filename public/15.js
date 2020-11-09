@@ -278,45 +278,25 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      truyenNgonTinh: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "6mth"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 3",
-        time: "6mth"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 3",
-        time: "6mth"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 4",
-        time: "6mth"
+      truyenNgonTinh: [],
+      truyenDeCu: [],
+      truyen: [{
+        link: ''
       }],
-      truyenDeCu: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/img/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/img/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/img/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/img/logo.png"
-      }]
+      storyName: ""
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/index').then(function (response) {
+      _this.truyenDeCu = response.data['truyendecu'];
+      _this.truyenNgonTinh = response.data['truyenngontinh'];
+    });
+    axios.get('/api/index/story/?id=' + this.$route.params.name).then(function (response) {
+      _this.truyen = response.data['truyen'];
+      _this.storyName = response.data['storyName'];
+    });
   }
 });
 
@@ -401,7 +381,63 @@ var render = function() {
             { staticClass: "row m-0 p-0" },
             [
               _c("div", { staticClass: "col-lg-8 pr-0" }, [
-                _vm._m(0),
+                _c("div", { staticClass: "card mb-3 border-0" }, [
+                  _c("div", { staticClass: "row no-gutters" }, [
+                    _c("div", { staticClass: "col-12" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title text-left" }, [
+                          _vm._v("Truyện Vip")
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "novel-info text-left" }, [
+                          _vm._m(0),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "info" }, [
+                            _c("h1", [
+                              _vm._v(
+                                "\n                              " +
+                                  _vm._s(_vm.storyName) +
+                                  "\n                          "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(1),
+                            _vm._v(" "),
+                            _vm._m(2),
+                            _vm._v(" "),
+                            _vm._m(3),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "px-3" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-primary py-1 mr-2",
+                                  attrs: {
+                                    href: _vm.truyen[0].link,
+                                    role: "button"
+                                  }
+                                },
+                                [_vm._v("Đọc Từ Đầu")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-warning py-1 mr-2",
+                                  attrs: {
+                                    href: _vm.truyen.link,
+                                    role: "button"
+                                  }
+                                },
+                                [_vm._v("Mua Chương VIP")]
+                              )
+                            ])
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "card mb-3 border-0" }, [
                   _c("div", { staticClass: "row no-gutters" }, [
@@ -411,13 +447,13 @@ var render = function() {
                           _vm._v("DANH SÁCH CHƯƠNG")
                         ]),
                         _vm._v(" "),
-                        _vm._m(1),
+                        _vm._m(4),
                         _vm._v(" "),
                         _c("div", { staticClass: " d-flex flex-column" }, [
                           _c(
                             "ul",
                             { staticClass: "py-1 my-0" },
-                            _vm._l(_vm.truyenNgonTinh, function(item) {
+                            _vm._l(_vm.truyen, function(item) {
                               return _c(
                                 "li",
                                 {
@@ -525,9 +561,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _vm._m(5),
                 _vm._v(" "),
-                _vm._m(3)
+                _vm._m(6)
               ]),
               _vm._v(" "),
               _c("SlideBar")
@@ -560,197 +596,146 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card mb-3 border-0" }, [
-      _c("div", { staticClass: "row no-gutters" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title text-left" }, [
-              _vm._v("Truyện Vip")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "novel-info text-left" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "cover position-relative",
-                  attrs: {
-                    href:
-                      "/truyen/do-de-cua-ta-deu-la-trum-phan-dien-dich/chuong-1.html"
-                  }
-                },
-                [
-                  _c("img", {
-                    staticClass: "zoom-me lazy loaded",
-                    attrs: {
-                      "data-src":
-                        "https://media.truyenyy.vn/novels/2020-04/d37990b1ed.jpg",
-                      title: "Truyện Đồ Đệ Của Ta Đều Là Trùm Phản Diện (Dịch)",
-                      src:
-                        "https://media.truyenyy.vn/novels/2020-04/d37990b1ed.jpg",
-                      "data-was-processed": "true"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "novel-stripe" }, [
-                    _c("span", { staticClass: "red" }, [_vm._v("Top 7")])
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "info" }, [
-                _c("h1", [
-                  _vm._v(
-                    "\n                              Đồ Đệ Của Ta Đều Là Trùm Phản Diện (Dịch)\n                          "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "author px-3" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "text-dark text-black-50",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v("Mưu Sinh Nhâm Chuyển Bồng")]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text-08 px-3 my-2" }, [
-                  _vm._v(
-                    "\n                            Giới thiệu\n                            "
-                  ),
-                  _c("p", { staticClass: "my-0" }, [
-                    _vm._v(
-                      "Khi tỉnh dậy, Lục Châu phát hiện mình đã biến thành đại ma đầu tổ sư gia cường đại nhất thế gian, hắn còn có chín tên đồ đệ tội ác chồng chất uy chấn thiên hạ.Đại đồ đệ là Giáo chủ U Minh giáo, thủ hạ dưới tay có ngàn vạn ma đầu. Nhị đồ đệ là Kiếm Ma, một lời không hợp là đại khai sát giới..."
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "numbers list-unstyled d-flex px-3 mb-3" },
-                  [
-                    _c("li", { staticClass: "text-09" }, [
-                      _vm._v("844,215 "),
-                      _c("small", { staticClass: "text-muted text-06" }, [
-                        _vm._v("Chữ")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "px-2 text-09" }, [_vm._v("|")]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-09" }, [
-                      _vm._v("508 "),
-                      _c("small", { staticClass: "text-muted text-06" }, [
-                        _vm._v("Chương")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "px-2 text-09 text-muted" }, [
-                      _vm._v("|")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-09" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "num-format",
-                          attrs: {
-                            title: "",
-                            "data-toggle": "tooltip",
-                            "data-original-title": "67,686"
-                          }
-                        },
-                        [_vm._v("67.7K ")]
-                      ),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "text-muted text-06" }, [
-                        _vm._v("Lượt Xem")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "px-2 text-09 text-muted" }, [
-                      _vm._v("|")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-09" }, [
-                      _c(
-                        "span",
-                        {
-                          staticClass: "num-format",
-                          attrs: {
-                            title: "",
-                            "data-toggle": "tooltip",
-                            "data-original-title": "1,139"
-                          }
-                        },
-                        [_vm._v("1.1K ")]
-                      ),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "text-muted text-06" }, [
-                        _vm._v("Lượt Thích")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "px-2 text-09 text-muted" }, [
-                      _vm._v("|")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "text-09" }, [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href:
-                              "/truyen/do-de-cua-ta-deu-la-trum-phan-dien-dich/kim-phieu/",
-                            target: "_blank"
-                          }
-                        },
-                        [
-                          _c(
-                            "span",
-                            {
-                              staticClass: "num-format",
-                              attrs: {
-                                title: "",
-                                "data-toggle": "tooltip",
-                                "data-original-title": "3,054"
-                              }
-                            },
-                            [_vm._v("3.1K ")]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "text-muted text-06" }, [
-                        _vm._v("Kim Phiếu")
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "px-3" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary py-1 mr-2",
-                      attrs: { href: "/doctruyen", role: "button" }
-                    },
-                    [_vm._v("Đọc Từ Đầu")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-warning py-1 mr-2",
-                      attrs: { href: "/doctruyen", role: "button" }
-                    },
-                    [_vm._v("Mua Chương VIP")]
-                  )
-                ])
-              ])
-            ])
-          ])
+    return _c(
+      "a",
+      {
+        staticClass: "cover position-relative",
+        attrs: {
+          href: "/truyen/do-de-cua-ta-deu-la-trum-phan-dien-dich/chuong-1.html"
+        }
+      },
+      [
+        _c("img", {
+          staticClass: "zoom-me lazy loaded",
+          attrs: {
+            "data-src":
+              "https://media.truyenyy.vn/novels/2020-04/d37990b1ed.jpg",
+            title: "Truyện Đồ Đệ Của Ta Đều Là Trùm Phản Diện (Dịch)",
+            src: "https://media.truyenyy.vn/novels/2020-04/d37990b1ed.jpg",
+            "data-was-processed": "true"
+          }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "novel-stripe" }, [
+          _c("span", { staticClass: "red" }, [_vm._v("Top 7")])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "author px-3" }, [
+      _c(
+        "a",
+        { staticClass: "text-dark text-black-50", attrs: { href: "#" } },
+        [_vm._v("Mưu Sinh Nhâm Chuyển Bồng")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-08 px-3 my-2" }, [
+      _vm._v(
+        "\n                            Giới thiệu\n                            "
+      ),
+      _c("p", { staticClass: "my-0" }, [
+        _vm._v(
+          "Khi tỉnh dậy, Lục Châu phát hiện mình đã biến thành đại ma đầu tổ sư gia cường đại nhất thế gian, hắn còn có chín tên đồ đệ tội ác chồng chất uy chấn thiên hạ.Đại đồ đệ là Giáo chủ U Minh giáo, thủ hạ dưới tay có ngàn vạn ma đầu. Nhị đồ đệ là Kiếm Ma, một lời không hợp là đại khai sát giới..."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "numbers list-unstyled d-flex px-3 mb-3" }, [
+      _c("li", { staticClass: "text-09" }, [
+        _vm._v("844,215 "),
+        _c("small", { staticClass: "text-muted text-06" }, [_vm._v("Chữ")])
+      ]),
+      _vm._v(" "),
+      _c("small", { staticClass: "px-2 text-09" }, [_vm._v("|")]),
+      _vm._v(" "),
+      _c("li", { staticClass: "text-09" }, [
+        _vm._v("508 "),
+        _c("small", { staticClass: "text-muted text-06" }, [_vm._v("Chương")])
+      ]),
+      _vm._v(" "),
+      _c("small", { staticClass: "px-2 text-09 text-muted" }, [_vm._v("|")]),
+      _vm._v(" "),
+      _c("li", { staticClass: "text-09" }, [
+        _c(
+          "span",
+          {
+            staticClass: "num-format",
+            attrs: {
+              title: "",
+              "data-toggle": "tooltip",
+              "data-original-title": "67,686"
+            }
+          },
+          [_vm._v("67.7K ")]
+        ),
+        _vm._v(" "),
+        _c("small", { staticClass: "text-muted text-06" }, [_vm._v("Lượt Xem")])
+      ]),
+      _vm._v(" "),
+      _c("small", { staticClass: "px-2 text-09 text-muted" }, [_vm._v("|")]),
+      _vm._v(" "),
+      _c("li", { staticClass: "text-09" }, [
+        _c(
+          "span",
+          {
+            staticClass: "num-format",
+            attrs: {
+              title: "",
+              "data-toggle": "tooltip",
+              "data-original-title": "1,139"
+            }
+          },
+          [_vm._v("1.1K ")]
+        ),
+        _vm._v(" "),
+        _c("small", { staticClass: "text-muted text-06" }, [
+          _vm._v("Lượt Thích")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("small", { staticClass: "px-2 text-09 text-muted" }, [_vm._v("|")]),
+      _vm._v(" "),
+      _c("li", { staticClass: "text-09" }, [
+        _c(
+          "a",
+          {
+            attrs: {
+              href:
+                "/truyen/do-de-cua-ta-deu-la-trum-phan-dien-dich/kim-phieu/",
+              target: "_blank"
+            }
+          },
+          [
+            _c(
+              "span",
+              {
+                staticClass: "num-format",
+                attrs: {
+                  title: "",
+                  "data-toggle": "tooltip",
+                  "data-original-title": "3,054"
+                }
+              },
+              [_vm._v("3.1K ")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("small", { staticClass: "text-muted text-06" }, [
+          _vm._v("Kim Phiếu")
         ])
       ])
     ])

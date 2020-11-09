@@ -2217,6 +2217,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../config */ "./resources/js/config.js");
+/* harmony import */ var _env__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../env */ "./resources/js/env.js");
 //
 //
 //
@@ -2389,6 +2391,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   // name: "NavigationComponent",
   props: {},
@@ -2397,7 +2401,7 @@ __webpack_require__.r(__webpack_exports__);
       search: "",
       activePrompt: false,
       valMultipe: {
-        email: '',
+        email: 'vdietrich@example.net',
         password: ''
       },
       checkBox: true
@@ -2421,6 +2425,58 @@ __webpack_require__.r(__webpack_exports__);
         color: 'danger',
         title: 'Closed',
         text: 'You close a dialog!'
+      });
+    },
+    xuly: function xuly() {
+      this.$router.push({
+        name: 'about'
+      });
+    },
+    handle: function handle() {
+      var _this = this;
+
+      // vdietrich@example.net
+      //   let email = this.valMultipe.email;
+      // axios.get('/api/login/?email=${email}').then((response) => {
+      //           console.log(response.email);
+      //           if(!response.err){
+      //                   this.$router.push({name: 'about'})
+      //           }
+      //   })
+      var postData = {
+        grant_type: 'password',
+        client_id: _env__WEBPACK_IMPORTED_MODULE_1__["clientId"],
+        client_secret: _env__WEBPACK_IMPORTED_MODULE_1__["clientSecret"],
+        username: this.valMultipe.email,
+        password: this.valMultipe.password,
+        scope: '*'
+      };
+      var authUser = {};
+      axios({
+        method: 'post',
+        url: _config__WEBPACK_IMPORTED_MODULE_0__["loginURL"],
+        data: postData
+      }).then(function (response) {
+        if (response.status === 200) {
+          console.log('Oauth token', response);
+          authUser.access_token = response.data.access_token;
+          authUser.refresh_token = response.data.refresh_token;
+          window.localStorage.setItem('authUser', JSON.stringify(authUser));
+          axios({
+            method: 'get',
+            url: _config__WEBPACK_IMPORTED_MODULE_0__["userURL"],
+            headers: Object(_config__WEBPACK_IMPORTED_MODULE_0__["getHeader"])()
+          }).then(function (response) {
+            console.log('User token', response);
+            authUser.email = response.data.email;
+            authUser.name = response.data.name;
+            window.localStorage.setItem('authUser', JSON.stringify(authUser));
+
+            _this.$router.push({
+              name: 'about'
+            });
+          });
+        }
       });
     }
   }
@@ -2505,7 +2561,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // name: "SlideBar",
   props: {
@@ -2513,70 +2568,22 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      reviewTruyen: [{
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }],
-      topTruyenHay: [{
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 1
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 2
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 3
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 4
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 5
-      }],
-      topTruyenMoiDang: [{
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 1
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 2
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 3
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 4
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        id: 5
-      }]
+      reviewTruyen: [],
+      topTruyenHay: [],
+      topTruyenMoiDang: []
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/index').then(function (response) {
+      _this.topTruyenHay = response.data['truyenngan'];
+      _this.topTruyenMoiDang = response.data['truyendecu'];
+      _this.reviewTruyen = response.data['truyenvip'];
+      _this.truyenNgonTinh = response.data['truyenngontinh'];
+      _this.truyenTienHiep = response.data['truyentienhiep'];
+      _this.truyenTeen = response.data['truyenteen'];
+    });
   }
 });
 
@@ -2791,120 +2798,30 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      truyenNgan: [{
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }, {
-        link: "/truyen",
-        title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-      }],
-      truyenDeCu: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }],
-      truyenVip: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }],
+      truyenNgan: [],
+      truyenDeCu: [],
+      truyenVip: [],
       ngontinh: true,
       tienhiep: false,
       teen: false,
-      truyenNgonTinh: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "3 giờ trước"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "3 giờ trước"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "3 giờ trước"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "3 giờ trước"
-      }],
-      truyenTienHiep: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "3 giờ trước"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "3 giờ trước"
-      }],
-      truyenTeen: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        time: "3 giờ trước"
-      }],
-      truyenFull: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        src: "/images/logo.png"
-      }]
+      truyenNgonTinh: [],
+      truyenTienHiep: [],
+      truyenTeen: [],
+      truyenFull: []
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/index').then(function (response) {
+      _this.truyenFull = response.data['truyenfull'];
+      _this.truyenNgan = response.data['truyenngan'];
+      _this.truyenDeCu = response.data['truyendecu'];
+      _this.truyenVip = response.data['truyenvip'];
+      _this.truyenNgonTinh = response.data['truyenngontinh'];
+      _this.truyenTienHiep = response.data['truyentienhiep'];
+      _this.truyenTeen = response.data['truyenteen'];
+    });
   }
 });
 
@@ -40593,7 +40510,12 @@ var render = function() {
                         "vs-button",
                         {
                           staticClass: "mx-2 mt-4",
-                          attrs: { color: "primary", type: "border" }
+                          attrs: { color: "primary", type: "border" },
+                          on: {
+                            click: function($event) {
+                              return _vm.handle()
+                            }
+                          }
                         },
                         [_vm._v("Đăng Nhập")]
                       ),
@@ -40674,15 +40596,9 @@ var render = function() {
                     { key: item.id, staticClass: "review-item mb-0" },
                     [
                       _c("li", { staticClass: "d-flex flex-row news-item" }, [
-                        _c(
-                          "a",
-                          { attrs: { href: item.link, title: item.title } },
-                          [
-                            _c("img", {
-                              attrs: { src: item.src, alt: item.title }
-                            })
-                          ]
-                        ),
+                        _c("a", {
+                          attrs: { href: item.link, title: item.title }
+                        }),
                         _vm._v(" "),
                         _c("h6", { staticClass: "px-2" }, [
                           _c(
@@ -40880,7 +40796,7 @@ var render = function() {
                                   ),
                                   _vm._v(" "),
                                   _c("h6", { staticClass: "card-text" }, [
-                                    _c("a", { attrs: { href: "" } }, [
+                                    _c("a", { attrs: { href: item.link } }, [
                                       _vm._v(_vm._s(item.text))
                                     ])
                                   ])
@@ -40934,7 +40850,7 @@ var render = function() {
                                   ),
                                   _vm._v(" "),
                                   _c("h6", { staticClass: "card-text" }, [
-                                    _c("a", { attrs: { href: "" } }, [
+                                    _c("a", { attrs: { href: item.link } }, [
                                       _vm._v(_vm._s(item.text))
                                     ])
                                   ])
@@ -41301,11 +41217,7 @@ var render = function() {
                                             title: item.title
                                           }
                                         },
-                                        [
-                                          _vm._v(
-                                            "Top 7 truyện ngôn tình hay nhất Trung Quốc phải đọc một lần trong đời"
-                                          )
-                                        ]
+                                        [_vm._v(_vm._s(item.text))]
                                       )
                                     ])
                                   ]
@@ -75447,6 +75359,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/config.js":
+/*!********************************!*\
+  !*** ./resources/js/config.js ***!
+  \********************************/
+/*! exports provided: loginURL, userURL, getHeader */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginURL", function() { return loginURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userURL", function() { return userURL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHeader", function() { return getHeader; });
+var loginURL = '/oauth/token';
+var userURL = '/api/user';
+var getHeader = function getHeader() {
+  var tokenData = JSON.parse(window.localStorage.getItem('authUser'));
+  var headers = {
+    'Accept': 'application/json',
+    'Authorization': 'Bearer ' + tokenData.access_token
+  };
+  return headers;
+};
+
+/***/ }),
+
+/***/ "./resources/js/env.js":
+/*!*****************************!*\
+  !*** ./resources/js/env.js ***!
+  \*****************************/
+/*! exports provided: clientId, clientSecret */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clientId", function() { return clientId; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clientSecret", function() { return clientSecret; });
+var clientId = '2';
+var clientSecret = 'jBK5bShOkrK9GS0hz6xROiOylbukGH0HFvyjCRwN';
+
+/***/ }),
+
 /***/ "./resources/js/router.js":
 /*!********************************!*\
   !*** ./resources/js/router.js ***!
@@ -75567,13 +75520,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./components/news/AboutNews.vue */ "./resources/js/components/news/AboutNews.vue"));
     }
   }, {
-    path: '/truyen',
+    path: '/truyen/:name',
     name: 'truyen',
     component: function component() {
       return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./components/story/truyen.vue */ "./resources/js/components/story/truyen.vue"));
     }
   }, {
-    path: '/doctruyen',
+    path: '/doctruyen/:name/:id',
     name: 'doctruyen',
     component: function component() {
       return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./components/readthestory/DocTruyen.vue */ "./resources/js/components/readthestory/DocTruyen.vue"));

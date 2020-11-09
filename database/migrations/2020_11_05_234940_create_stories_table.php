@@ -15,7 +15,8 @@ class CreateStoriesTable extends Migration
     {
         Schema::create('stories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('authorId');
+            $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('category_id');
             $table->string('name');
             $table->unsignedInteger('chap');
             $table->string('status');

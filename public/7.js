@@ -198,7 +198,7 @@ var render = function() {
                   _c("a", { attrs: { href: news.link } }, [
                     _c("img", {
                       staticClass: "card-img-top img-product",
-                      attrs: { src: "/img/news/news0.jpg", alt: "..." }
+                      attrs: { src: news.newsText, alt: "..." }
                     })
                   ])
                 ]),
@@ -208,8 +208,6 @@ var render = function() {
                     _c("h4", { staticClass: "card-title primary-text" }, [
                       _vm._v(_vm._s(news.newsName))
                     ]),
-                    _vm._v(" "),
-                    _c("p", [_vm._v(_vm._s(news.newsText))]),
                     _vm._v(" "),
                     _vm._m(1, true)
                   ])

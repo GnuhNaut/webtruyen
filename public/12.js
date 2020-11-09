@@ -130,45 +130,22 @@ __webpack_require__.r(__webpack_exports__);
       teen: false,
       truyenfull: false,
       truyenkfull: false,
-      truyenNgonTinh: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        image: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        image: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        image: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        image: "/images/logo.png"
-      }],
-      truyenTienHiep: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        image: "/images/logo.png"
-      }, {
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        image: "/images/logo.png"
-      }],
-      truyenTeen: [{
-        link: "/truyen",
-        text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-        chuong: "chương 1",
-        image: "/images/logo.png"
-      }]
+      truyenNgonTinh: [],
+      truyenTienHiep: []
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/index').then(function (response) {
+      _this.truyenFull = response.data['truyenfull'];
+      _this.truyenNgan = response.data['truyenngan'];
+      _this.truyenDeCu = response.data['truyendecu'];
+      _this.truyenVip = response.data['truyenvip'];
+      _this.truyenNgonTinh = response.data['truyenngontinh'];
+      _this.truyenTienHiep = response.data['truyentienhiep'];
+      _this.truyenTeen = response.data['truyenteen'];
+    });
   }
 });
 

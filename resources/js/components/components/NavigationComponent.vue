@@ -156,7 +156,7 @@
               <vs-checkbox class="left-content" v-model="checkBox">Ghi nhớ mật khẩu</vs-checkbox>
             </div>
 
-            <vs-button class="mx-2 mt-4" color="primary" type="border">Đăng Nhập</vs-button>
+            <vs-button v-on:click="handle()" class="mx-2 mt-4" color="primary" type="border">Đăng Nhập</vs-button>
 
             <div class="mx-2 my-1">
               <a href="#">Quên mật khẩu?</a>
@@ -171,6 +171,8 @@
 </template>
 
 <script>
+import {loginURL, getHeader, userURL} from '../../config'
+import {clientId, clientSecret} from '../../env'
 export default {
   // name: "NavigationComponent",
   props: {},
@@ -179,7 +181,7 @@ export default {
       search: "",
       activePrompt: false,
       valMultipe:{
-        email:'',
+        email:'vdietrich@example.net',
         password:''
       },
       checkBox:true
@@ -205,7 +207,58 @@ export default {
         text:'You close a dialog!'
       })
     },
-  }
+    
+    xuly(){
+      this.$router.push({name: 'about'})
+    },
+    handle(){
+      // vdietrich@example.net
+    //   let email = this.valMultipe.email;
+    // axios.get('/api/login/?email=${email}').then((response) => {
+    //           console.log(response.email);
+    //           if(!response.err){
+    //                   this.$router.push({name: 'about'})
+
+    //           }
+    
+    //   })
+      const postData = {
+                grant_type: 'password',
+                client_id: clientId,
+                client_secret: clientSecret,
+                username: this.valMultipe.email,
+                password: this.valMultipe.password,
+                scope: '*'
+            }
+            const authUser = {}
+            axios({
+                method: 'post',
+                url: loginURL,
+                data: postData
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        console.log('Oauth token', response)
+                        authUser.access_token = response.data.access_token
+                        authUser.refresh_token = response.data.refresh_token
+                        window.localStorage.setItem('authUser', JSON.stringify(authUser))
+                        axios({
+                            method: 'get',
+                            url: userURL,
+                            headers: getHeader()
+                        })
+                            .then(response => {
+                                console.log('User token', response)
+                                authUser.email = response.data.email
+                                authUser.name = response.data.name
+                                window.localStorage.setItem('authUser', JSON.stringify(authUser))
+                                this.$router.push({name: 'about'})
+                            })
+                    }
+                })
+        }
+    }
+  
 };
 </script>
 

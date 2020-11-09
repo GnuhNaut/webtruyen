@@ -13,4 +13,8 @@ class Story extends Model
     {
         return $this->belongsTo(Author::class);
     }
+    public function has()
+    {
+        return $this->hasMany(Chapter::class);
+    }
 }

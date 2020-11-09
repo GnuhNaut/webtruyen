@@ -13,5 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/{any}', 'welcome')
-    ->where('any', '.*');
+Route::any('{all}', function () {
+    return view('welcome');
+})
+->where(['all' => '.*']);
+

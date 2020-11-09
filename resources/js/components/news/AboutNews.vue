@@ -19,7 +19,7 @@
             <div class="col-md-4">
               <a  :href="news.link">
                 <img
-                  src="/img/news/news0.jpg"
+                  :src=news.newsText
                   class="card-img-top img-product"
                   alt="..."
                 />
@@ -28,7 +28,7 @@
             <div class="col-md-8">
               <div class="card-body text-left">
                 <h4 class="card-title primary-text">{{news.newsName}}</h4>
-                <p>{{news.newsText }}</p>
+                <!-- <p>{{news.newsText }}</p> -->
                 <p class="card-text">
                   <small class="text-muted">> More...</small>
                 </p>

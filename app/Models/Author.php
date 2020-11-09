@@ -9,4 +9,8 @@ class Author extends Model
 {
     use HasFactory;
     protected $table = 'authors';
+    public function story()
+    {
+        return $this->hasMany(Story::class);
+    }
 }

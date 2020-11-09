@@ -19,7 +19,7 @@
                         </a>
                         <div class="info">
                             <h1>
-                                Đồ Đệ Của Ta Đều Là Trùm Phản Diện (Dịch)
+                                {{ storyName }}
                             </h1>
                             <div class="author px-3">
                                 <a class="text-dark text-black-50" href="#">Mưu Sinh Nhâm Chuyển Bồng</a>
@@ -51,8 +51,8 @@
                                 </li>
                             </ul>
                             <div class="px-3">
-                                <a href="/doctruyen" class="btn btn-primary py-1 mr-2" role="button">Đọc Từ Đầu</a>
-                                <a href="/doctruyen" class="btn btn-warning py-1 mr-2" role="button">Mua Chương VIP</a>
+                                <a :href=truyen[0].link class="btn btn-primary py-1 mr-2" role="button">Đọc Từ Đầu</a>
+                                <a :href=truyen.link class="btn btn-warning py-1 mr-2" role="button">Mua Chương VIP</a>
                             </div>
                             
                         </div>
@@ -84,7 +84,7 @@
                     </div>
                     <div class=" d-flex flex-column">
                       <ul class="py-1 my-0">
-                        <li class="d-flex flex-row text-justify border-item" v-for="item in truyenNgonTinh" :key="item.id">
+                        <li class="d-flex flex-row text-justify border-item" v-for="item in truyen" :key="item.id">
                           <h6 class="card-text col-2 text-left my-0 py-2">
                             <a :href=item.link>{{item.chuong}}</a>
                           </h6>
@@ -264,56 +264,24 @@ export default {
   },
   data() {
     return {
-      truyenNgonTinh: [
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          time: "6mth"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 3",
-          time: "6mth"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 3",
-          time: "6mth"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 4",
-          time: "6mth"
-        }
-      ],
-      truyenDeCu: [
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "/img/logo.png"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "/img/logo.png"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "/img/logo.png"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "/img/logo.png"
-        }
-      ]
+      truyenNgonTinh: [],
+      truyenDeCu: [],
+      truyen: [{
+        link: ''
+      }],
+      storyName: ""
     }
-  }
+  },
+  mounted() {
+  axios.get('/api/index').then((response) => {
+    this.truyenDeCu = response.data['truyendecu']
+    this.truyenNgonTinh = response.data['truyenngontinh']
+  })
+  axios.get('/api/index/story/?id='+this.$route.params.name).then((response) => {
+    this.truyen = response.data['truyen']
+    this.storyName = response.data['storyName']
+  })
+}
 };
 </script>
 <style>

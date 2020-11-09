@@ -116,56 +116,21 @@ export default {
       teen: false,
       truyenfull: false,
       truyenkfull: false,
-      truyenNgonTinh: [
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          image: "/images/logo.png"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          image: "/images/logo.png"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          image: "/images/logo.png"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          image: "/images/logo.png"
-        }
-      ],
-      truyenTienHiep: [
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          image: "/images/logo.png"
-        },
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          image: "/images/logo.png"
-        }
-      ],
-      truyenTeen: [
-        {
-          link: "/truyen",
-          text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          chuong: "chương 1",
-          image: "/images/logo.png"
-        }
-      ]
+      truyenNgonTinh: [],
+      truyenTienHiep: []
     }
-  }
+  },
+  mounted() {
+  axios.get('/api/index').then((response) => {
+    this.truyenFull = response.data['truyenfull']
+    this.truyenNgan = response.data['truyenngan']
+    this.truyenDeCu = response.data['truyendecu']
+    this.truyenVip = response.data['truyenvip']
+    this.truyenNgonTinh = response.data['truyenngontinh']
+    this.truyenTienHiep = response.data['truyentienhiep']
+    this.truyenTeen = response.data['truyenteen']
+  })
+}
 };
 </script>
 <style scoped>

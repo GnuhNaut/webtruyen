@@ -9,7 +9,6 @@
                             <ul class="review-item mb-0" v-for="item in reviewTruyen" :key="item.id"> 
                                 <li class="d-flex flex-row news-item"> 
                                     <a :href=item.link :title=item.title>
-                                        <img :src=item.src :alt=item.title>
                                     </a> 
                                     <h6 class="px-2">
                                         <a :href=item.link :title=item.title>{{item.title}}</a>
@@ -75,89 +74,21 @@ export default {
   },
   data() {
       return {
-          reviewTruyen: [
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          src: "https://img.webtruyen.com/public/images/news/small74toptruyentienhiephaihuochaynhat.jpg"
-        }
-      ],
-      topTruyenHay: [
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 1
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 2
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 3
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 4
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 5
-        }
-      ],
-      topTruyenMoiDang: [
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 1
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 2
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 3
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 4
-        },
-        {
-          link: "/truyen",
-          title: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
-          id: 5
-        }
-      ]
+      reviewTruyen: [],
+      topTruyenHay: [],
+      topTruyenMoiDang: []
       }
-  }
+  },
+  mounted() {
+  axios.get('/api/index').then((response) => {
+    this.topTruyenHay = response.data['truyenngan']
+    this.topTruyenMoiDang = response.data['truyendecu']
+    this.reviewTruyen = response.data['truyenvip']
+    this.truyenNgonTinh = response.data['truyenngontinh']
+    this.truyenTienHiep = response.data['truyentienhiep']
+    this.truyenTeen = response.data['truyenteen']
+  })
+}
 };
 </script>
 <style scoped>

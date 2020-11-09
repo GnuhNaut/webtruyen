@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StoryController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/index', 'App\Http\Controllers\StoryController@getIndex');
+Route::get('/index/story', 'App\Http\Controllers\StoryController@getStory');
+Route::get('/index/chap', 'App\Http\Controllers\StoryController@getChapter');
+
+Route::get('/login/{email}', 'App\Http\Controllers\UserController@getUser');
