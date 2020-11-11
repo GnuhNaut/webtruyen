@@ -133,7 +133,7 @@ export default {
 </script>
 <style>
 .wiki-content {
-    background: #faf5eb url(/img/background/church.png) 0 0 repeat;
+    background: #faf5eb url(/images/church.png) 0 0 repeat;
     background-size: 100px;
     color: #262626;
     border: 6px solid #b0aca7;

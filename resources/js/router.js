@@ -118,6 +118,12 @@ export default new Router({
             name: 'doctruyen',
             component: () =>
                 import ('./components/readthestory/DocTruyen.vue')
+        },
+        {
+            path: '/search/:search',
+            name: 'search',
+            component: () =>
+                import ('./components/search/Search.vue')
         }
     ]
 })

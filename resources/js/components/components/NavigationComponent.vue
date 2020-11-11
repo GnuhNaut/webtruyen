@@ -8,7 +8,7 @@
     >
       <div slot="title">
         <vs-navbar-title class="text-white my-1 d-flex align-items-center">
-          <img class="logo-img mx-2" src="../assets/img/logo.png" alt="">
+          <img class="logo-img mx-2" src="/images/logo.png" alt="">
           <h4 class="mt-2">Doc truyen online</h4>
         </vs-navbar-title>
       </div>
@@ -124,8 +124,8 @@
         <a class=" text-09" href="/news">News</a>
       </vs-navbar-item>
       <div class="d-flex align-items-center">
-        <vs-input class="px-0 ml-2 mx-1" placeholder="Search" v-model="search"/>
-        <vs-button color="white" type="gradient" icon="search"></vs-button>
+        <vs-input class="px-0 ml-2 mx-1" placeholder="Search" type="text" v-model="search"/>
+        <vs-button color="white" type="gradient" icon="search" :href=link @click="dataSreach"></vs-button>
       </div>
 
       <div class="">
@@ -156,7 +156,7 @@
               <vs-checkbox class="left-content" v-model="checkBox">Ghi nhớ mật khẩu</vs-checkbox>
             </div>
 
-            <vs-button v-on:click="handle()" class="mx-2 mt-4" color="primary" type="border">Đăng Nhập</vs-button>
+            <vs-button class="mx-2 mt-4" color="primary" type="border">Đăng Nhập</vs-button>
 
             <div class="mx-2 my-1">
               <a href="#">Quên mật khẩu?</a>
@@ -171,20 +171,18 @@
 </template>
 
 <script>
-import {loginURL, getHeader, userURL} from '../../config'
-import {clientId, clientSecret} from '../../env'
 export default {
-  // name: "NavigationComponent",
-  props: {},
+  name: "NavigationComponent",
   data() {
     return {
       search: "",
       activePrompt: false,
       valMultipe:{
-        email:'vdietrich@example.net',
+        email:'',
         password:''
       },
-      checkBox:true
+      checkBox:true,
+      link: ''
     };
   },
   computed:{
@@ -193,6 +191,11 @@ export default {
     }
   },
   methods:{
+    dataSreach: function() {
+      if(this.search){
+        this.link = '/search/' + this.search;
+      }
+    },
     acceptAlert(){
       this.$vs.notify({
         color:'success',
@@ -207,58 +210,7 @@ export default {
         text:'You close a dialog!'
       })
     },
-    
-    xuly(){
-      this.$router.push({name: 'about'})
-    },
-    handle(){
-      // vdietrich@example.net
-    //   let email = this.valMultipe.email;
-    // axios.get('/api/login/?email=${email}').then((response) => {
-    //           console.log(response.email);
-    //           if(!response.err){
-    //                   this.$router.push({name: 'about'})
-
-    //           }
-    
-    //   })
-      const postData = {
-                grant_type: 'password',
-                client_id: clientId,
-                client_secret: clientSecret,
-                username: this.valMultipe.email,
-                password: this.valMultipe.password,
-                scope: '*'
-            }
-            const authUser = {}
-            axios({
-                method: 'post',
-                url: loginURL,
-                data: postData
-            })
-                .then(response => {
-                    if (response.status === 200) {
-                        console.log('Oauth token', response)
-                        authUser.access_token = response.data.access_token
-                        authUser.refresh_token = response.data.refresh_token
-                        window.localStorage.setItem('authUser', JSON.stringify(authUser))
-                        axios({
-                            method: 'get',
-                            url: userURL,
-                            headers: getHeader()
-                        })
-                            .then(response => {
-                                console.log('User token', response)
-                                authUser.email = response.data.email
-                                authUser.name = response.data.name
-                                window.localStorage.setItem('authUser', JSON.stringify(authUser))
-                                this.$router.push({name: 'about'})
-                            })
-                    }
-                })
-        }
-    }
-  
+  }
 };
 </script>
 

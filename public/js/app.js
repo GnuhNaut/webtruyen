@@ -2217,8 +2217,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../config */ "./resources/js/config.js");
-/* harmony import */ var _env__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../env */ "./resources/js/env.js");
 //
 //
 //
@@ -2391,20 +2389,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // name: "NavigationComponent",
-  props: {},
+  name: "NavigationComponent",
   data: function data() {
     return {
       search: "",
       activePrompt: false,
       valMultipe: {
-        email: 'vdietrich@example.net',
+        email: '',
         password: ''
       },
-      checkBox: true
+      checkBox: true,
+      link: ''
     };
   },
   computed: {
@@ -2413,6 +2409,11 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    dataSreach: function dataSreach() {
+      if (this.search) {
+        this.link = '/search/' + this.search;
+      }
+    },
     acceptAlert: function acceptAlert() {
       this.$vs.notify({
         color: 'success',
@@ -2425,58 +2426,6 @@ __webpack_require__.r(__webpack_exports__);
         color: 'danger',
         title: 'Closed',
         text: 'You close a dialog!'
-      });
-    },
-    xuly: function xuly() {
-      this.$router.push({
-        name: 'about'
-      });
-    },
-    handle: function handle() {
-      var _this = this;
-
-      // vdietrich@example.net
-      //   let email = this.valMultipe.email;
-      // axios.get('/api/login/?email=${email}').then((response) => {
-      //           console.log(response.email);
-      //           if(!response.err){
-      //                   this.$router.push({name: 'about'})
-      //           }
-      //   })
-      var postData = {
-        grant_type: 'password',
-        client_id: _env__WEBPACK_IMPORTED_MODULE_1__["clientId"],
-        client_secret: _env__WEBPACK_IMPORTED_MODULE_1__["clientSecret"],
-        username: this.valMultipe.email,
-        password: this.valMultipe.password,
-        scope: '*'
-      };
-      var authUser = {};
-      axios({
-        method: 'post',
-        url: _config__WEBPACK_IMPORTED_MODULE_0__["loginURL"],
-        data: postData
-      }).then(function (response) {
-        if (response.status === 200) {
-          console.log('Oauth token', response);
-          authUser.access_token = response.data.access_token;
-          authUser.refresh_token = response.data.refresh_token;
-          window.localStorage.setItem('authUser', JSON.stringify(authUser));
-          axios({
-            method: 'get',
-            url: _config__WEBPACK_IMPORTED_MODULE_0__["userURL"],
-            headers: Object(_config__WEBPACK_IMPORTED_MODULE_0__["getHeader"])()
-          }).then(function (response) {
-            console.log('User token', response);
-            authUser.email = response.data.email;
-            authUser.name = response.data.name;
-            window.localStorage.setItem('authUser', JSON.stringify(authUser));
-
-            _this.$router.push({
-              name: 'about'
-            });
-          });
-        }
       });
     }
   }
@@ -7355,7 +7304,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#app {\r\n  font-family: 'Roboto', sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n  text-align: center;\r\n  color: #2c3e50;\r\n  background-color: #e3e3e3;\r\n  font-size: 14px;\n}\r\n", ""]);
+exports.push([module.i, "\n#app {\n  font-family: 'Roboto', sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n  background-color: #e3e3e3;\n  font-size: 14px;\n}\n", ""]);
 
 // exports
 
@@ -7374,7 +7323,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background-header[data-v-7b95ae3e]{\r\n  height: 350px;\r\n  overflow: hidden;\n}\n.background-header img[data-v-7b95ae3e]{\r\n  height: 100%;\r\n  width: 100%;\n}\n.huan[data-v-7b95ae3e] {\r\n  width: 350px;\r\n  height: 350px;\n}\r\n", ""]);
+exports.push([module.i, "\n.background-header[data-v-7b95ae3e]{\n  height: 350px;\n  overflow: hidden;\n}\n.background-header img[data-v-7b95ae3e]{\n  height: 100%;\n  width: 100%;\n}\n.huan[data-v-7b95ae3e] {\n  width: 350px;\n  height: 350px;\n}\n", ""]);
 
 // exports
 
@@ -7393,7 +7342,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.logo-img[data-v-74518cbb] {\r\n  width: 120px;\n}\r\n", ""]);
+exports.push([module.i, "\n.logo-img[data-v-74518cbb] {\n  width: 120px;\n}\n", ""]);
 
 // exports
 
@@ -7412,7 +7361,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.vs-navbar-before[data-v-129e42d8]{\r\n  position: relative;\r\n  padding: 5px 10px;\n}\n.border-top[data-v-129e42d8]{\r\n  border-top: 1px solid #989898 !important;\n}\n.vs-navbar-after[data-v-129e42d8]{\r\n  width: 0;\r\n  height: 2px;\r\n  left: 50%;\r\n  bottom: 0;\r\n  transform: translate(-50%);\r\n  background: 31,116,255;\r\n  position: absolute;\r\n  transition: all .25s ease;\r\n  z-index: 10;\n}\n.list-nostyle a[data-v-129e42d8]{\r\n  color: inherit;\r\n  text-decoration: none;\n}\n.list-nostyle a:hover~.vs-navbar-after[data-v-129e42d8] {\r\n    width: 70%;\n}\n.partner-card[data-v-129e42d8]{\r\n    width: 50px;\r\n    height: 50px;\r\n    overflow: hidden;\r\n    margin:5px;\n}\n.partner-card img[data-v-129e42d8]{\r\n    height: 100%;\n}\n.footer-logo-img[data-v-129e42d8] {\r\n  height: 30px !important;\n}\n.border-0[data-v-129e42d8] {\r\n  border: none !important;\r\n  outline: none !important;\r\n  color: #fff !important;\n}\n.vs-navbar[data-v-129e42d8] {\r\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-129e42d8] {\r\n  background-color: #fff !important;\r\n  color: #fff !important;\r\n  background: none;\n}\n.social-icon img[data-v-129e42d8]{\r\n    width: 30px;\r\n    height: 30px;\n}\r\n", ""]);
+exports.push([module.i, "\n.vs-navbar-before[data-v-129e42d8]{\n  position: relative;\n  padding: 5px 10px;\n}\n.border-top[data-v-129e42d8]{\n  border-top: 1px solid #989898 !important;\n}\n.vs-navbar-after[data-v-129e42d8]{\n  width: 0;\n  height: 2px;\n  left: 50%;\n  bottom: 0;\n  transform: translate(-50%);\n  background: 31,116,255;\n  position: absolute;\n  transition: all .25s ease;\n  z-index: 10;\n}\n.list-nostyle a[data-v-129e42d8]{\n  color: inherit;\n  text-decoration: none;\n}\n.list-nostyle a:hover~.vs-navbar-after[data-v-129e42d8] {\n    width: 70%;\n}\n.partner-card[data-v-129e42d8]{\n    width: 50px;\n    height: 50px;\n    overflow: hidden;\n    margin:5px;\n}\n.partner-card img[data-v-129e42d8]{\n    height: 100%;\n}\n.footer-logo-img[data-v-129e42d8] {\n  height: 30px !important;\n}\n.border-0[data-v-129e42d8] {\n  border: none !important;\n  outline: none !important;\n  color: #fff !important;\n}\n.vs-navbar[data-v-129e42d8] {\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-129e42d8] {\n  background-color: #fff !important;\n  color: #fff !important;\n  background: none;\n}\n.social-icon img[data-v-129e42d8]{\n    width: 30px;\n    height: 30px;\n}\n", ""]);
 
 // exports
 
@@ -7431,7 +7380,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background-color[data-v-7bef19bb]{\r\n  background-color: #2C7ABE;\n}\n.logo-img[data-v-7bef19bb]{\r\n  height: 50px !important;\n}\n.border-0[data-v-7bef19bb]{\r\n  border: none !important;\r\n  outline: none !important;\r\n  color: #FFF !important;\n}\n.vs-navbar[data-v-7bef19bb]{\r\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-7bef19bb]{\r\n  background-color:#FFF !important;\r\n  color:#FFF !important;\r\n  background:none;\n}\na[data-v-7bef19bb] {\r\n  outline: none;\r\n  text-decoration: none !important;\r\n  color: #2c3e50;\r\n  font-size: 14px;\n}\n.form-input[data-v-7bef19bb]{\r\n  width: auto !important;\n}\n.left-content[data-v-7bef19bb]{\r\n  justify-content: left;\n}\n.left-content input[data-v-7bef19bb] {\r\n  padding: 10px;\n}\r\n", ""]);
+exports.push([module.i, "\n.background-color[data-v-7bef19bb]{\n  background-color: #2C7ABE;\n}\n.logo-img[data-v-7bef19bb]{\n  height: 50px !important;\n}\n.border-0[data-v-7bef19bb]{\n  border: none !important;\n  outline: none !important;\n  color: #FFF !important;\n}\n.vs-navbar[data-v-7bef19bb]{\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-7bef19bb]{\n  background-color:#FFF !important;\n  color:#FFF !important;\n  background:none;\n}\na[data-v-7bef19bb] {\n  outline: none;\n  text-decoration: none !important;\n  color: #2c3e50;\n  font-size: 14px;\n}\n.form-input[data-v-7bef19bb]{\n  width: auto !important;\n}\n.left-content[data-v-7bef19bb]{\n  justify-content: left;\n}\n.left-content input[data-v-7bef19bb] {\n  padding: 10px;\n}\n", ""]);
 
 // exports
 
@@ -7450,7 +7399,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.news-item[data-v-6826b820] {\r\n  height: 60px;\n}\n.review-item[data-v-6826b820]{\r\n  height: 60px;\n}\nh6[data-v-6826b820]{\r\n  font-size: 14px;\n}\nul > li[data-v-6826b820] {\r\n  list-style: none;\n}\n.border-item[data-v-6826b820] {\r\n  height: 40px;\r\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-6826b820] {\r\n  color: #2c3e50;\r\n  text-decoration: none;\n}\r\n", ""]);
+exports.push([module.i, "\n.news-item[data-v-6826b820] {\n  height: 60px;\n}\n.review-item[data-v-6826b820]{\n  height: 60px;\n}\nh6[data-v-6826b820]{\n  font-size: 14px;\n}\nul > li[data-v-6826b820] {\n  list-style: none;\n}\n.border-item[data-v-6826b820] {\n  height: 40px;\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-6826b820] {\n  color: #2c3e50;\n  text-decoration: none;\n}\n", ""]);
 
 // exports
 
@@ -7469,7 +7418,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nul > li[data-v-59b256ea] {\r\n  list-style: none;\n}\n.border-item[data-v-59b256ea] {\r\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-59b256ea] {\r\n  color: #2c3e50;\r\n  text-decoration: none;\n}\r\n", ""]);
+exports.push([module.i, "\nul > li[data-v-59b256ea] {\n  list-style: none;\n}\n.border-item[data-v-59b256ea] {\n  border-top: 2px dashed #cfcfcf;\n}\na[data-v-59b256ea] {\n  color: #2c3e50;\n  text-decoration: none;\n}\n", ""]);
 
 // exports
 
@@ -39994,7 +39943,7 @@ var render = function() {
                 [
                   _c("img", {
                     staticClass: "logo-img mx-2",
-                    attrs: { src: __webpack_require__(/*! ../assets/img/logo.png */ "./resources/js/components/assets/img/logo.png"), alt: "" }
+                    attrs: { src: "/images/logo.png", alt: "" }
                   }),
                   _vm._v(" "),
                   _c("h4", { staticClass: "mt-2" }, [
@@ -40350,7 +40299,7 @@ var render = function() {
             [
               _c("vs-input", {
                 staticClass: "px-0 ml-2 mx-1",
-                attrs: { placeholder: "Search" },
+                attrs: { placeholder: "Search", type: "text" },
                 model: {
                   value: _vm.search,
                   callback: function($$v) {
@@ -40361,7 +40310,13 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("vs-button", {
-                attrs: { color: "white", type: "gradient", icon: "search" }
+                attrs: {
+                  color: "white",
+                  type: "gradient",
+                  icon: "search",
+                  href: _vm.link
+                },
+                on: { click: _vm.dataSreach }
               })
             ],
             1
@@ -40510,12 +40465,7 @@ var render = function() {
                         "vs-button",
                         {
                           staticClass: "mx-2 mt-4",
-                          attrs: { color: "primary", type: "border" },
-                          on: {
-                            click: function($event) {
-                              return _vm.handle()
-                            }
-                          }
+                          attrs: { color: "primary", type: "border" }
                         },
                         [_vm._v("Đăng Nhập")]
                       ),
@@ -75359,47 +75309,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/config.js":
-/*!********************************!*\
-  !*** ./resources/js/config.js ***!
-  \********************************/
-/*! exports provided: loginURL, userURL, getHeader */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginURL", function() { return loginURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userURL", function() { return userURL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getHeader", function() { return getHeader; });
-var loginURL = '/oauth/token';
-var userURL = '/api/user';
-var getHeader = function getHeader() {
-  var tokenData = JSON.parse(window.localStorage.getItem('authUser'));
-  var headers = {
-    'Accept': 'application/json',
-    'Authorization': 'Bearer ' + tokenData.access_token
-  };
-  return headers;
-};
-
-/***/ }),
-
-/***/ "./resources/js/env.js":
-/*!*****************************!*\
-  !*** ./resources/js/env.js ***!
-  \*****************************/
-/*! exports provided: clientId, clientSecret */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clientId", function() { return clientId; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clientSecret", function() { return clientSecret; });
-var clientId = '2';
-var clientSecret = 'jBK5bShOkrK9GS0hz6xROiOylbukGH0HFvyjCRwN';
-
-/***/ }),
-
 /***/ "./resources/js/router.js":
 /*!********************************!*\
   !*** ./resources/js/router.js ***!
@@ -75531,6 +75440,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: function component() {
       return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./components/readthestory/DocTruyen.vue */ "./resources/js/components/readthestory/DocTruyen.vue"));
     }
+  }, {
+    path: '/search/:search',
+    name: 'search',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./components/search/Search.vue */ "./resources/js/components/search/Search.vue"));
+    }
   }]
 }));
 
@@ -75577,8 +75492,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\5.Huan\Nam3\HQTCSDL\btl\webtruyen\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\5.Huan\Nam3\HQTCSDL\btl\webtruyen\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /opt/lampp/htdocs/webtruyen/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /opt/lampp/htdocs/webtruyen/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

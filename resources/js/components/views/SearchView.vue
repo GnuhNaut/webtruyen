@@ -88,11 +88,11 @@
 </template>
 
 <script>
-import NavigationComponent from "@/components/NavigationComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import BackgroundComponent from "@/components/BackgroundComponent.vue";
-import ContactComponent from "@/components/ContactComponent.vue";
-import SlideBar from "@/components/SlideBar.vue";
+import NavigationComponent from "../components/NavigationComponent.vue";
+import FooterComponent from "../components/FooterComponent.vue";
+import BackgroundComponent from "../components/BackgroundComponent.vue";
+import ContactComponent from "../components/ContactComponent.vue";
+import SlideBar from "../components/SlideBar.vue";
 
 export default {
   name: "category",
@@ -113,25 +113,25 @@ export default {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
           chuong: "chương 1",
-          image: "/img/logo.png"
+          image: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
           chuong: "chương 1",
-          image: "/img/logo.png"
+          image: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
           chuong: "chương 1",
-          image: "/img/logo.png"
+          image: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
           chuong: "chương 1",
-          image: "/img/logo.png"
+          image: "/images/logo.png"
         }
       ],
       truyenTienHiep: [
@@ -139,13 +139,13 @@ export default {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
           chuong: "chương 1",
-          image: "/img/logo.png"
+          image: "/images/logo.png"
         },
         {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
           chuong: "chương 1",
-          image: "/img/logo.png"
+          image: "/images/logo.png"
         }
       ],
       truyenTeen: [
@@ -153,7 +153,7 @@ export default {
           link: "/truyen",
           text: "Top truyện tiên hiệp hài hước hay nhất đừng bỏ lỡ ",
           chuong: "chương 1",
-          image: "/img/logo.png"
+          image: "/images/logo.png"
         }
       ]
     }

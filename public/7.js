@@ -125,7 +125,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.text-bold-color[data-v-22afd6a2]{\r\n    color: #f60;\r\n    font-weight: 700;\r\n    display: bold;\n}\n.news-mr[data-v-22afd6a2]{\r\n  margin: 0px 0px 50px 0px;\n}\n.news-mr[data-v-22afd6a2]:hover{\r\n  background-color: #eee;\n}\r\n", ""]);
+exports.push([module.i, "\n.text-bold-color[data-v-22afd6a2]{\n    color: #f60;\n    font-weight: 700;\n    display: bold;\n}\n.news-mr[data-v-22afd6a2]{\n  margin: 0px 0px 50px 0px;\n}\n.news-mr[data-v-22afd6a2]:hover{\n  background-color: #eee;\n}\n", ""]);
 
 // exports
 
