@@ -21,6 +21,8 @@ class CreateStoriesTable extends Migration
             $table->unsignedInteger('chap');
             $table->string('status');
             $table->timestamps();
+            $table->index('author_id');
+            $table->index('category_id');
         });
     }
 

@@ -19,6 +19,7 @@ class CreateChaptersTable extends Migration
             $table->string('title');
             $table->longText('content');
             $table->timestamps();
+            $table->index('story_id');
         });
     }
 

@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->unsignedTinyInteger('type');
             $table->rememberToken();
             $table->timestamps();
+            $table->index('email');
+            $table->index('password');
         });
     }
 

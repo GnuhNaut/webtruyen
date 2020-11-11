@@ -17,6 +17,8 @@ class CreateAuthorsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->index('user_id');
+
         });
     }
 
