@@ -10,11 +10,11 @@ class CreateChaptersTable extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */ 
     public function up()
     {
         Schema::create('chapters', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->z('id');
             $table->unsignedBigInteger('story_id');
             $table->string('title');
             $table->longText('content');

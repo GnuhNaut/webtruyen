@@ -22,6 +22,7 @@ class CreateStoriesTable extends Migration
             $table->string('status');
             $table->timestamps();
             $table->index('author_id');
+            $table->index('name');
             $table->index('category_id');
         });
     }

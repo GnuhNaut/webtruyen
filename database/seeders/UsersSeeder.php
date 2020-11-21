@@ -15,6 +15,6 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::factory(1000)->create();
+        $user = User::factory(100)->create();
     }
 }

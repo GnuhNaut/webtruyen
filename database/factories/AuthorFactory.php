@@ -22,7 +22,7 @@ class AuthorFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->unique()->numberBetween(1, 1000),
+            'user_id' => $this->faker->unique()->numberBetween(1, 3300),
         ];
     }
 }

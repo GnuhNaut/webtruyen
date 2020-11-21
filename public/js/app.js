@@ -75336,7 +75336,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: './about',
     name: 'about',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./components/views/About.vue */ "./resources/js/components/views/About.vue"));
+      return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./components/views/About.vue */ "./resources/js/components/views/About.vue"));
     }
   }, {
     path: '/category',
@@ -75384,43 +75384,43 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: '/truyenvip',
     name: 'truyenvip',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./components/select/TruyenVip.vue */ "./resources/js/components/select/TruyenVip.vue"));
+      return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./components/select/TruyenVip.vue */ "./resources/js/components/select/TruyenVip.vue"));
     }
   }, {
     path: '/truyenmoicapnhat',
     name: 'truyenmoicapnhat',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./components/select/TruyenMoiCapNhat.vue */ "./resources/js/components/select/TruyenMoiCapNhat.vue"));
+      return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./components/select/TruyenMoiCapNhat.vue */ "./resources/js/components/select/TruyenMoiCapNhat.vue"));
     }
   }, {
     path: '/truyenyeuthich',
     name: 'truyenyeuthich',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./components/select/TruyenYeuThich.vue */ "./resources/js/components/select/TruyenYeuThich.vue"));
+      return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./components/select/TruyenYeuThich.vue */ "./resources/js/components/select/TruyenYeuThich.vue"));
     }
   }, {
     path: '/truyendecu',
     name: 'truyendecu',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./components/select/TruyenDeCu.vue */ "./resources/js/components/select/TruyenDeCu.vue"));
+      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./components/select/TruyenDeCu.vue */ "./resources/js/components/select/TruyenDeCu.vue"));
     }
   }, {
     path: '/truyenxemnhieu',
     name: 'truyenxemnhieu',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./components/select/TruyenXemNhieu.vue */ "./resources/js/components/select/TruyenXemNhieu.vue"));
+      return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./components/select/TruyenXemNhieu.vue */ "./resources/js/components/select/TruyenXemNhieu.vue"));
     }
   }, {
     path: '/truyenfull',
     name: 'truyenfull',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./components/select/TruyenFull.vue */ "./resources/js/components/select/TruyenFull.vue"));
+      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./components/select/TruyenFull.vue */ "./resources/js/components/select/TruyenFull.vue"));
     }
   }, {
     path: '/feedback',
     name: 'feedback',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./components/feedback/AboutFeedBack.vue */ "./resources/js/components/feedback/AboutFeedBack.vue"));
+      return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./components/feedback/AboutFeedBack.vue */ "./resources/js/components/feedback/AboutFeedBack.vue"));
     }
   }, {
     path: '/news',
@@ -75432,7 +75432,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: '/truyen/:name',
     name: 'truyen',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./components/story/truyen.vue */ "./resources/js/components/story/truyen.vue"));
+      return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./components/story/truyen.vue */ "./resources/js/components/story/truyen.vue"));
     }
   }, {
     path: '/doctruyen/:name/:id',
@@ -75444,7 +75444,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: '/search/:search',
     name: 'search',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./components/search/Search.vue */ "./resources/js/components/search/Search.vue"));
+      return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./components/search/Search.vue */ "./resources/js/components/search/Search.vue"));
     }
   }]
 }));
