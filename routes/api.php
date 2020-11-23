@@ -24,6 +24,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/index', 'App\Http\Controllers\StoryController@getIndex');
 Route::get('/index/story', 'App\Http\Controllers\StoryController@getStory');
 Route::get('/index/chap', 'App\Http\Controllers\StoryController@getChapter');
+Route::post('/post', 'App\Http\Controllers\StoryController@postStory');
+
 Route::get('/search', 'App\Http\Controllers\SearchController@search');
 
-Route::get('/login/{email}', 'App\Http\Controllers\UserController@getUser');
+Route::post('/login', 'App\Http\Controllers\UserController@login');
+Route::post('/register', 'App\Http\Controllers\UserController@register');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Models\Story;
+use App\Models\Chapter;
 
 class StoryController extends Controller
 {
@@ -113,5 +114,33 @@ class StoryController extends Controller
                 'chap' => $chap,
                 'truyen' =>$story
             ],200);
+    }
+
+    public function postStory(Request $request){
+        $nameStory = $request->input('story');
+        $chap = $request->input('chap');
+        $content = $request->input('content');
+        if(!Story::where('name', $nameStory)->first()){
+            $story = new Story();
+            $story->name = $nameStory;
+            $story->author_id = 1;
+            $story->category_id = 1;
+            $story->chap = 0;
+            $story->status = 'van con';
+            $story->save();
+            
+        }
+        
+        if($truyen = Story::where('name', $nameStory)->first()){
+            $chapter = new Chapter();
+            $chapter->story_id = $truyen->id;
+            $chapter->title = $chap;
+            $chapter->content = $content;
+            $chapter->save();
+        }
+        return response()->json([
+            'err' => $truyen->id,
+        ],200);
+            
     }
 }

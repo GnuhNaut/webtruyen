@@ -2366,29 +2366,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NavigationComponent",
   data: function data() {
@@ -7380,7 +7357,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.background-color[data-v-7bef19bb]{\n  background-color: #2C7ABE;\n}\n.logo-img[data-v-7bef19bb]{\n  height: 50px !important;\n}\n.border-0[data-v-7bef19bb]{\n  border: none !important;\n  outline: none !important;\n  color: #FFF !important;\n}\n.vs-navbar[data-v-7bef19bb]{\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-7bef19bb]{\n  background-color:#FFF !important;\n  color:#FFF !important;\n  background:none;\n}\na[data-v-7bef19bb] {\n  outline: none;\n  text-decoration: none !important;\n  color: #2c3e50;\n  font-size: 14px;\n}\n.form-input[data-v-7bef19bb]{\n  width: auto !important;\n}\n.left-content[data-v-7bef19bb]{\n  justify-content: left;\n}\n.left-content input[data-v-7bef19bb] {\n  padding: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.background-color[data-v-7bef19bb]{\n  background-color: #2C7ABE;\n}\n.logo-img[data-v-7bef19bb]{\n  height: 50px !important;\n}\n.border-0[data-v-7bef19bb]{\n  border: none !important;\n  outline: none !important;\n  color: #FFF !important;\n}\n.vs-navbar[data-v-7bef19bb]{\n  box-shadow: none;\n}\n.vs-navbar--btn-responsive .btn-responsive-line[data-v-7bef19bb]{\n  background-color:#FFF !important;\n  color:#FFF !important;\n  background:none;\n}\na[data-v-7bef19bb] {\n  outline: none;\n  text-decoration: none !important;\n  color: #2c3e50;\n  font-size: 14px;\n}\n.form-input[data-v-7bef19bb]{\n  width: auto !important;\n}\n.left-content[data-v-7bef19bb]{\n  justify-content: left;\n}\n.left-content input[data-v-7bef19bb] {\n  padding: 10px;\n}\ni[data-v-7bef19bb] {\n  font-size: 20px;\n}\n", ""]);
 
 // exports
 
@@ -40322,182 +40299,31 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c(
-            "div",
-            {},
-            [
+          _c("div", { staticClass: "pl-1 ml-1" }, [
+            _c("a", { attrs: { href: "/login" } }, [
               _c(
-                "vs-button",
-                {
-                  staticClass: "border-0 ml-2 text-08",
-                  attrs: {
-                    color: "#F60",
-                    type: "gradient",
-                    icon: "person",
-                    size: "small"
-                  },
-                  on: {
-                    click: function($event) {
-                      _vm.activePrompt = true
-                    }
-                  }
-                },
-                [_vm._v("Đăng Nhập")]
-              ),
-              _vm._v(" "),
+                "div",
+                { staticClass: "d-flex align-items-center text-white" },
+                [_c("h6", { staticClass: "pt-2" }, [_vm._v("Đăng nhập")])]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "pl-3 ml-3" }, [
+            _c("a", { attrs: { href: "/post" } }, [
               _c(
-                "vs-prompt",
-                {
-                  staticClass: "d-flex text-center text-justify",
-                  attrs: {
-                    color: "primary",
-                    title: "Đăng Nhập",
-                    "buttons-hidden": "",
-                    "is-valid": _vm.validName,
-                    active: _vm.activePrompt
-                  },
-                  on: {
-                    cancel: function($event) {
-                      ;(_vm.valMultipe.email = ""),
-                        (_vm.valMultipe.password = "")
-                    },
-                    "update:active": function($event) {
-                      _vm.activePrompt = $event
-                    }
-                  }
-                },
+                "div",
+                { staticClass: "d-flex align-items-center text-white" },
                 [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "con-exemple-prompt d-flex text-left flex-column text-justify"
-                    },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "px-2 my-2" },
-                        [
-                          _c("vs-input", {
-                            staticClass: "form-input",
-                            attrs: { label: "Email", placeholder: "Email" },
-                            model: {
-                              value: _vm.valMultipe.email,
-                              callback: function($$v) {
-                                _vm.$set(_vm.valMultipe, "email", $$v)
-                              },
-                              expression: "valMultipe.email"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "px-2 my-2" },
-                        [
-                          _c("vs-input", {
-                            staticClass: "form-input",
-                            attrs: {
-                              label: "Password",
-                              placeholder: "Password"
-                            },
-                            model: {
-                              value: _vm.valMultipe.password,
-                              callback: function($$v) {
-                                _vm.$set(_vm.valMultipe, "password", $$v)
-                              },
-                              expression: "valMultipe.password"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "mr-3 mt-2" },
-                        [
-                          _c(
-                            "vs-alert",
-                            {
-                              staticClass: "mx-2 my-2",
-                              attrs: {
-                                active: !_vm.validName,
-                                color: "danger",
-                                icon: "new_releases"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "\n              Fields can not be empty please enter the data\n            "
-                              )
-                            ]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "px-2 py-2" },
-                        [
-                          _c(
-                            "vs-checkbox",
-                            {
-                              staticClass: "left-content",
-                              model: {
-                                value: _vm.checkBox,
-                                callback: function($$v) {
-                                  _vm.checkBox = $$v
-                                },
-                                expression: "checkBox"
-                              }
-                            },
-                            [_vm._v("Ghi nhớ mật khẩu")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "vs-button",
-                        {
-                          staticClass: "mx-2 mt-4",
-                          attrs: { color: "primary", type: "border" }
-                        },
-                        [_vm._v("Đăng Nhập")]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mx-2 my-1" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v("Quên mật khẩu?")
-                        ])
-                      ])
-                    ],
-                    1
-                  )
+                  _c("i", {
+                    staticClass: "far fa-user-circle pr-2 btn-icon-big"
+                  }),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "pt-2" }, [_vm._v("Đăng truyện")])
                 ]
               )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-button",
-            {
-              staticClass: "text-08 ml-2",
-              attrs: {
-                to: "/",
-                color: "#F60",
-                type: "gradient",
-                icon: "person_add",
-                size: "small"
-              }
-            },
-            [_vm._v("Đăng Ký")]
-          )
+            ])
+          ])
         ],
         1
       )
@@ -74569,6 +74395,11 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('example', __webpack_requir
 //   store,
 //   render: h => h(App)
 // }).$mount('#app')
+// Vue.use(require('@websanova/vue-auth'), {
+//     auth: require('@websanova/vue-auth/drivers/auth/bearer.js'),
+//     http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
+//     router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
+// });
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -75336,115 +75167,139 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: './about',
     name: 'about',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./components/views/About.vue */ "./resources/js/components/views/About.vue"));
+      return __webpack_require__.e(/*! import() */ 22).then(__webpack_require__.bind(null, /*! ./components/views/About.vue */ "./resources/js/components/views/About.vue"));
     }
   }, {
     path: '/category',
     name: 'category',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./components/category/CategoryView.vue */ "./resources/js/components/category/CategoryView.vue"));
+      return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./components/category/CategoryView.vue */ "./resources/js/components/category/CategoryView.vue"));
     }
   }, {
     path: '/kiemhiep',
     name: 'kiemhiep',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/category/KiemHiep.vue */ "./resources/js/components/category/KiemHiep.vue"));
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./components/category/KiemHiep.vue */ "./resources/js/components/category/KiemHiep.vue"));
     }
   }, {
     path: './lichsu',
     name: 'lichsu',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ./components/category/LichSu.vue */ "./resources/js/components/category/LichSu.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./components/category/LichSu.vue */ "./resources/js/components/category/LichSu.vue"));
     }
   }, {
     path: '/ngontinh',
     name: 'ngontinh',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ./components/category/NgonTinh.vue */ "./resources/js/components/category/NgonTinh.vue"));
+      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./components/category/NgonTinh.vue */ "./resources/js/components/category/NgonTinh.vue"));
     }
   }, {
     path: '/tienhiep',
     name: 'tienhiep',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./components/category/TienHiep.vue */ "./resources/js/components/category/TienHiep.vue"));
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./components/category/TienHiep.vue */ "./resources/js/components/category/TienHiep.vue"));
     }
   }, {
     path: '/truyenma',
     name: 'truyenma',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ./components/category/TruyenMa.vue */ "./resources/js/components/category/TruyenMa.vue"));
+      return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./components/category/TruyenMa.vue */ "./resources/js/components/category/TruyenMa.vue"));
     }
   }, {
     path: '/truyenteen',
     name: 'truyenteen',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./components/category/TruyenTeen.vue */ "./resources/js/components/category/TruyenTeen.vue"));
+      return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./components/category/TruyenTeen.vue */ "./resources/js/components/category/TruyenTeen.vue"));
     }
   }, {
     path: '/truyenvip',
     name: 'truyenvip',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./components/select/TruyenVip.vue */ "./resources/js/components/select/TruyenVip.vue"));
+      return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./components/select/TruyenVip.vue */ "./resources/js/components/select/TruyenVip.vue"));
     }
   }, {
     path: '/truyenmoicapnhat',
     name: 'truyenmoicapnhat',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./components/select/TruyenMoiCapNhat.vue */ "./resources/js/components/select/TruyenMoiCapNhat.vue"));
+      return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./components/select/TruyenMoiCapNhat.vue */ "./resources/js/components/select/TruyenMoiCapNhat.vue"));
     }
   }, {
     path: '/truyenyeuthich',
     name: 'truyenyeuthich',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./components/select/TruyenYeuThich.vue */ "./resources/js/components/select/TruyenYeuThich.vue"));
+      return __webpack_require__.e(/*! import() */ 19).then(__webpack_require__.bind(null, /*! ./components/select/TruyenYeuThich.vue */ "./resources/js/components/select/TruyenYeuThich.vue"));
     }
   }, {
     path: '/truyendecu',
     name: 'truyendecu',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./components/select/TruyenDeCu.vue */ "./resources/js/components/select/TruyenDeCu.vue"));
+      return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./components/select/TruyenDeCu.vue */ "./resources/js/components/select/TruyenDeCu.vue"));
     }
   }, {
     path: '/truyenxemnhieu',
     name: 'truyenxemnhieu',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 14).then(__webpack_require__.bind(null, /*! ./components/select/TruyenXemNhieu.vue */ "./resources/js/components/select/TruyenXemNhieu.vue"));
+      return __webpack_require__.e(/*! import() */ 18).then(__webpack_require__.bind(null, /*! ./components/select/TruyenXemNhieu.vue */ "./resources/js/components/select/TruyenXemNhieu.vue"));
     }
   }, {
     path: '/truyenfull',
     name: 'truyenfull',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./components/select/TruyenFull.vue */ "./resources/js/components/select/TruyenFull.vue"));
+      return __webpack_require__.e(/*! import() */ 15).then(__webpack_require__.bind(null, /*! ./components/select/TruyenFull.vue */ "./resources/js/components/select/TruyenFull.vue"));
     }
   }, {
     path: '/feedback',
     name: 'feedback',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 17).then(__webpack_require__.bind(null, /*! ./components/feedback/AboutFeedBack.vue */ "./resources/js/components/feedback/AboutFeedBack.vue"));
+      return __webpack_require__.e(/*! import() */ 21).then(__webpack_require__.bind(null, /*! ./components/feedback/AboutFeedBack.vue */ "./resources/js/components/feedback/AboutFeedBack.vue"));
     }
   }, {
     path: '/news',
     name: 'news',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ./components/news/AboutNews.vue */ "./resources/js/components/news/AboutNews.vue"));
+      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ./components/news/AboutNews.vue */ "./resources/js/components/news/AboutNews.vue"));
     }
   }, {
     path: '/truyen/:name',
     name: 'truyen',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 16).then(__webpack_require__.bind(null, /*! ./components/story/truyen.vue */ "./resources/js/components/story/truyen.vue"));
+      return __webpack_require__.e(/*! import() */ 20).then(__webpack_require__.bind(null, /*! ./components/story/truyen.vue */ "./resources/js/components/story/truyen.vue"));
     }
   }, {
     path: '/doctruyen/:name/:id',
     name: 'doctruyen',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ./components/readthestory/DocTruyen.vue */ "./resources/js/components/readthestory/DocTruyen.vue"));
+      return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./components/readthestory/DocTruyen.vue */ "./resources/js/components/readthestory/DocTruyen.vue"));
     }
   }, {
     path: '/search/:search',
     name: 'search',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./components/search/Search.vue */ "./resources/js/components/search/Search.vue"));
+      return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./components/search/Search.vue */ "./resources/js/components/search/Search.vue"));
+    }
+  }, {
+    path: '/login',
+    name: 'login',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ./components/login/Login.vue */ "./resources/js/components/login/Login.vue"));
+    }
+  }, {
+    path: '/register',
+    name: 'register',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ./components/login/Registration.vue */ "./resources/js/components/login/Registration.vue"));
+    }
+  }, {
+    path: '/post',
+    name: 'post',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/auth/Post.vue */ "./resources/js/components/auth/Post.vue"));
+    }
+  }, {
+    path: '/dangtruyen/:story',
+    name: 'dangtruen',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./components/auth/DangChap.vue */ "./resources/js/components/auth/DangChap.vue"));
     }
   }]
 }));
